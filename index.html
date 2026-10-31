@@ -1,1 +1,229 @@
-# reemas
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ريماس الملكة 👑❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+  background: linear-gradient(135deg, #17091f, #702449, #210b29);
+  overflow-x: hidden;
+}
+
+.card {
+  width: 90%;
+  max-width: 430px;
+  margin: 45px auto;
+  padding: 28px 20px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.09);
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 0 35px rgba(255,70,160,0.3);
+  position: relative;
+  z-index: 2;
+  animation: appear 1s ease;
+}
+
+.crown {
+  font-size: 65px;
+  animation: crown 2s infinite ease-in-out;
+}
+
+h1 {
+  font-size: 35px;
+  color: #ffd5e8;
+  text-shadow: 0 0 20px #ff4fa5;
+}
+
+.subtitle {
+  font-size: 18px;
+  line-height: 2;
+}
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 15px 22px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #50142f;
+  background: linear-gradient(90deg, #ff69ad, #ffc5df);
+  cursor: pointer;
+  box-shadow: 0 0 20px #ff4fa566;
+  margin-top: 15px;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+#message {
+  display: none;
+  font-size: 18px;
+  line-height: 2.1;
+  animation: appear 1s ease;
+}
+
+.signature {
+  color: #ffc5df;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.heart {
+  position: fixed;
+  bottom: -50px;
+  z-index: 1;
+  pointer-events: none;
+  animation: float 7s linear forwards;
+}
+
+@keyframes crown {
+  0%,100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% { opacity: 1; }
+  100% {
+    transform: translateY(-110vh) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="crown">👑</div>
+
+  <h1>ريماس الملكة</h1>
+
+  <p class="subtitle">
+    مو كل ملكة لها تاج من ذهب...<br>
+    بعض الملكات مكانهن بالقلب ❤️
+  </p>
+
+  <p>💗 عندي لك كلام من قلبي 💗</p>
+
+  <button id="openBtn" onclick="openMessage()">
+    افتحي رسالتك يا ملكتي 💌
+  </button>
+
+  <div id="message">
+
+    <p>يا ريماس، يا أجمل صدفة بحياتي ❤️</p>
+
+    <p>
+      <strong>حبيتك من أول ما تعرفت عليك</strong>،
+      ومن أول ما دخلتي حياتي صار لك مكان بقلبي
+      ما يشبه مكان أي أحد ثاني. 💗
+    </p>
+
+    <p>
+      والله إني أعشقك يا ريماس،
+      وأحب كل شيء فيك، وأفرح من أبسط شيء يجيني منك.
+      وجودك بحياتي يعني لي كثير،
+      وأتمنى أكون سبب في ضحكتك وسعادتك. 🥹❤️
+    </p>
+
+    <p>
+      يا ملكة قلبي، أبيك تعرفين إنك غالية عندي،
+      وإن كلامي لك مو مجرد حروف،
+      هذا شعور بقلبي ما عرفت كيف أوصفه لك.
+    </p>
+
+    <p>
+      وإذا زعلتي مني يوم، لا تظنين إنك مو مهمة عندي،
+      بالعكس، رضاك يهمني، وودي دايم أشوفك مبسوطة.
+      💗🥹
+    </p>
+
+    <p>
+      <strong>
+        ريماس، أنتِ مو بس ملكة بالاسم...
+        أنتِ ملكة قلبي أنا. 👑❤️
+      </strong>
+    </p>
+
+    <p class="signature">
+      أحبك يا ريماس الملكة ❤️‍🔥<br>
+      من عمر، اللي حبيتك من أول ما عرفتك 💗
+    </p>
+
+  </div>
+
+  <p style="font-size:13px;color:#ffc5df">
+    صنعت لك هالمفاجأة بكل الحب ❤️
+  </p>
+
+</div>
+
+<script>
+function makeHeart() {
+  const heart = document.createElement("div");
+
+  heart.className = "heart";
+
+  const symbols = ["❤️", "💗", "💕", "💖", "💘", "✨"];
+
+  heart.textContent =
+    symbols[Math.floor(Math.random() * symbols.length)];
+
+  heart.style.left = Math.random() * 100 + "vw";
+
+  heart.style.fontSize =
+    (18 + Math.random() * 20) + "px";
+
+  heart.style.animationDuration =
+    (5 + Math.random() * 4) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(function() {
+    heart.remove();
+  }, 10000);
+}
+
+setInterval(makeHeart, 450);
+
+function openMessage() {
+  document.getElementById("message").style.display = "block";
+
+  document.getElementById("openBtn").style.display = "none";
+
+  for (let i = 0; i < 30; i++) {
+    setTimeout(makeHeart, i * 100);
+  }
+}
+</script>
+
+</body>
+</html>
